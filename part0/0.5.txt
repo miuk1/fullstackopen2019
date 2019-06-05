@@ -1,0 +1,19 @@
+user-> browser:
+note left of browser
+the user opens the page
+https://fullstack-exampleapp.herokuapp.com/spa
+end note
+browser-> server: GET https://fullstack-exampleapp.herokuapp.com/notes
+server--> browser: Status 200, page HTML code
+browser-> server: GET https://fullstack-exampleapp.herokuapp.com/main.css
+server--> browser: Status 200, page CSS
+browser-> server: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server--> browser: Status 200, page Javascript
+note right of browser
+browser runs javascript and makes AJAX request
+end note
+browser-> server: GET https://fullstack-exampleapp.herokuapp.com/data.json
+server--> browser: Status 200, JSON data with stored notes
+note left of browser
+The browser adds previous notes to DOM based on JSON data
+end note

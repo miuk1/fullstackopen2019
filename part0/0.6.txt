@@ -1,0 +1,20 @@
+user-> browser: user writes Note and press "save"
+Browser--> user:
+note left of browser
+The browser performs javascript when the submit button is pressed
+The browser draws the notes again, adding a new Note
+
+the user sees the new Note
+end note
+Browser-> Server:
+note right of browser
+POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+as an information request requestload
+{content: "A new note", date: "timestamp"}
+end note
+Server--> browser:
+note left of server
+The server stores the new Noten
+201 Created
+{"message": "A new note"}
+end note

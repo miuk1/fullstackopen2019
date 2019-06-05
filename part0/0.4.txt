@@ -1,0 +1,14 @@
+user--> browser: user writes Note and press "save"
+Browser--> Server:
+note right of browser
+POST https://fullstack-exampleapp.herokuapp.com/new_note
+as form data in the contents of the new Note
+end note
+server -> browser: 302 Found
+Browser -> Server:
+note right of browser
+The browser reloads the page
+see previous chart
+end note
+server-> browser: answer
+browser-> user: the user sees an updated page, which now also contains a new note
